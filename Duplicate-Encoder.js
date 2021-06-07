@@ -9,18 +9,29 @@
 
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
+
+//METODO 1
+
 function duplicateEncode(word){
     let words = word.toLowerCase().split('');
     let wordConverted = [];
     for(element of words){
-       if(words.lastIndexOf(element) != words.indexOf(element)){
-           wordConverted.push(')')
-       } else {
-           wordConverted.push('(')
-       } 
+       words.lastIndexOf(element) != words.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
     } 
     return wordConverted.join('')
 
+}
+
+console.log(duplicateEncode('recede'))
+
+//METODO 2
+
+function duplicateEncode(word){
+    let wordConverted = [];
+    for(element of word.toLowerCase()){
+       word.lastIndexOf(element) != word.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
+    } 
+    return wordConverted.join('')
 }
 
 console.log(duplicateEncode('Success'))

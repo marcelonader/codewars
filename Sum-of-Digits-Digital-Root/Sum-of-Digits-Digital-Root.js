@@ -8,23 +8,31 @@
 // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
-function digital_root(n) {
-    let arrayN = n.toString().split('')
-    let arrayNumber = []
+// function digital_root(n) {
+//     let arrayN = n.toString().split('')
+//     let arrayNumber = []
     
-    while(arrayN.length > 1) {
+//     while(arrayN.length > 1) {
         
-        for(element of arrayN){
-            arrayNumber.push(Number(element))
-        } 
-        resultado = arrayNumber.reduce((previous, current) => previous + current)
-        arrayN = resultado.toString().split('')
-        arrayNumber = []
+//         for(element of arrayN){
+//             arrayNumber.push(Number(element))
+//         } 
+//         resultado = arrayNumber.reduce((previous, current) => previous + current)
+//         arrayN = resultado.toString().split('')
+//         arrayNumber = []
     
-    }
-    return Number(arrayN)
+//     }
+//     return Number(arrayN)
     
+// }
+
+//ou
+
+function digital_root(n) {
+    let result = (n.toString().split('').map(value=>Number(value)).reduce(((previous, current) => previous + current)).toString().split('')).map(value=>Number(value)).join('')
+    n >= 10 ? result = digital_root(result) : '';
+    return result
 }
 
- console.log(digital_root(493193))
+console.log(digital_root(132189))
 

@@ -16,7 +16,7 @@ function duplicateEncode(word){
     let words = word.toLowerCase().split('');
     let wordConverted = [];
     for(element of words){
-       words.lastIndexOf(element) != words.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
+        words.lastIndexOf(element) != words.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
     } 
     return wordConverted.join('')
 
@@ -29,7 +29,7 @@ console.log(duplicateEncode('recede'))
 function duplicateEncode(word){
     let wordConverted = [];
     for(element of word.toLowerCase()){
-       word.lastIndexOf(element) != word.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
+        word.lastIndexOf(element) != word.indexOf(element) ? wordConverted.push(')') : wordConverted.push('(') 
     } 
     return wordConverted.join('')
 }
